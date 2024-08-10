@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <style>
+        * {
+            background-color: black;
+            color: goldenrod;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonnaci Generator</h1>
+    <label>Input Sequence Number:</label>
+    <input>
+    <br>
+    <br>
+    <button>Calculate Sequence</button>
+    <br>
+    <ul></ul>
+    <div class="footer">
+        <a id="return-link" href="../index.html">Return to LouCorp Hub</a>
+        </div>
+    <script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('button');
+        const list = document.querySelector('ul');
+        
+        btn.addEventListener('click', calculateSequence
+        )
+
+        function calculateSequence() {
+            const VALUE = input.value;
+            while (list.firstChild) {
+                list.removeChild(list.lastChild);
+            }
+            input.value = "";
+            if (VALUE < 0) {
+                return "OOPS";
+            } else if (VALUE == 0) {
+                return 0;
+            } else {
+                let fOne = 1;
+                let fTwo = 0;
+                for (let i = 2; i <= +VALUE; i++) {
+                    let fThree = fOne + fTwo;
+                    console.log(fThree);
+                    const listItem = document.createElement('li')
+                    listItem.textContent = fThree;
+                    list.appendChild(listItem);
+                    fOne = fTwo;
+                    fTwo = fThree;
+                }
+            }
+            input.focus();
+        }
+    </script>
+</body>
+</html>
