@@ -10,17 +10,13 @@
             color: white;
             text-align: center
         }
-        img {
-            display: block;
+        #drone {
             width: 50%;
-            margin: auto;
         }
         .link-button {
-            display: block;
             width: fit-content;
             margin: 5px auto;
-            border: 10px double red;
-            text-align: center;
+            border: 10px double red;            
             font-size: 25px;
             padding: 17px;
             color: goldenrod;
@@ -29,15 +25,30 @@
             border: 10px dotted red;
             color: red;
         }
+
+        .linkbox {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .imgbox {
+            display: flex;
+            justify-content: center;
+        }
+
         </style>
     </head>
     <body>
         <h1>LouCorp World Headquarters</h1>
-        <img src="images/Drone_sm.webp" alt="AC Drone">
-        <a class="link-button" href="pages/laleham.html">A Brief Account of the Laleham Family</a>
-        <a class="link-button" href="pages/p-l-e.html">Primate Language Experiments</a>
-        <a class="link-button" href="pages/blog.html">LouCorp Blog</a>
-        <a class="link-button" href="pages/street-art.html">Chicago Street Art</a>
-        <a class="link-button" href="https://axelrod-nemoy.bandcamp.com/">Axelrod Nemoy</a>
+        <div class="imgbox">
+            <img id="drone" src="images/Drone_sm.webp" alt="AC Drone">
+        </div>    
+        <div class="linkbox">
+            <a class="link-button" href="pages/laleham.html">A Brief Account of the Laleham Family</a>
+            <a class="link-button" href="pages/p-l-e.html">Primate Language Experiments</a>
+            <a class="link-button" href="pages/blog.html">LouCorp Blog</a>
+            <a class="link-button" href="pages/street-art.html">Chicago Street Art</a>
+            <a class="link-button" href="https://axelrod-nemoy.bandcamp.com/">Axelrod Nemoy</a>
+        </div>
     </body>
 </html>
