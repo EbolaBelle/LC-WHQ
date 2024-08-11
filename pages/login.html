@@ -61,6 +61,8 @@
 		const pw = document.querySelector('.password');
 		const button = document.querySelector('button');
 		const div = document.querySelector('.container')
+		const pornButton = document.createElement('button');
+		const pornLabel = document.createElement('label');
 
 		button.addEventListener('click', authentication);
 
@@ -88,11 +90,9 @@
 			div.appendChild(warning);
 		}
 
-		function createPorn() {
-			const pornButton = document.createElement('button');
+		function createPorn() {			
 			pornButton.textContent = "Hell yeah, brother!"
-			pornButton.addEventListener('click', playPorn);
-			const pornLabel = document.createElement('label');
+			pornButton.addEventListener('click', playPorn);			
 			pornLabel.textContent = "Jack off while you wait to die?";
 			div.appendChild(pornLabel)
 			div.appendChild(pornButton)
@@ -102,6 +102,10 @@
 			const PORN = document.createElement('div');
 			PORN.innerHTML = "<video autoplay><source src='../media/porn.mp4' type='video/mp4'></video>";
 			div.appendChild(PORN);
+			pornButton.removeEventListener('click', playPorn);
+			pornButton.remove();
+			pornLabel.style.color = 'red';
+			pornLabel.textContent = "GET TO IT THEN";
 		}
     </script>
 </body>
