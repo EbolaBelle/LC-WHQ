@@ -28,6 +28,11 @@
 		#return-link {
 			color: goldenrod;
 		}
+		.warning {
+			color: red;
+			font-size: x-large;
+			margin: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -64,7 +69,11 @@
             }
 				div.innerHTML = '<a class="db-link" href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
             } else {
-                alert("Unauthorised Access Detected - UTX9 Knife Missiles Deployed");
+                //alert("Unauthorised Access Detected - UTX9 Knife Missiles Deployed");
+				const warning = document.createElement('div');
+				warning.classList.add('warning');
+				warning.textContent = "Unauthorised Access Detected - UTX9 Knife Missiles Deployed";
+				div.appendChild(warning);
             }
         }
     </script>
