@@ -33,6 +33,10 @@
 			font-size: x-large;
 			margin: 50px;
 		}
+		.container > a {
+			display: flex;
+			justify-content: center;
+		}
 	</style>
 </head>
 <body>
@@ -61,18 +65,21 @@
 		button.addEventListener('click', authentication);
 
         function authentication() {
+			while (div.firstChild) {
+                div.removeChild(div.lastChild);				
+            }
             let lowerCaseUser = userInput.value.toLowerCase();
 	    	let lowerCasePassword = pw.value.toLowerCase();
             if (lowerCaseUser === userName && lowerCasePassword === passWord) {                
-				while (div.firstChild) {
-                div.removeChild(div.lastChild);				
-            }
+				
 				div.innerHTML = '<a class="db-link" href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
             } else {
-                //alert("Unauthorised Access Detected - UTX9 Knife Missiles Deployed");
-				const warning = document.createElement('div');
+                const warning = document.createElement('div');
+				const img = document.createElement('a');
+				img.innerHTML = '<img src="../images/R9X.jpeg" width="50%" height="auto">';
+				div.appendChild(img);
 				warning.classList.add('warning');
-				warning.textContent = "Unauthorised Access Detected - UTX9 Knife Missiles Deployed";
+				warning.textContent = "Unauthorised Access Detected - R9X Knife Missiles Deployed";
 				div.appendChild(warning);
             }
         }
