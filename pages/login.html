@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+	<style>
+	body {
+		background-color: black;
+		color: green;
+		}
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 50px;
+	}
+	</style>
+</head>
+<body>
+<div>
+<label>Username: </label>
+<input class="user">
+<br>
+<label>Password: </label>
+<input class="password">
+
+<br>
+<button>Login</button>
+</div>
+    <script>
+        const userName = "lillithember";
+        const passWord = "anarcho.croneyism";
+	const userInput = document.querySelector('.user');
+	const pw = document.querySelector('.password');
+	const button = document.querySelector('button');
+
+	button.addEventListener('click', authentication);
+
+        function authentication() {
+            //currentUser = prompt("Username: ", "");
+            let lowerCaseUser = userInput.value.toLowerCase();
+	    let lowerCasePassword = pw.value.toLowerCase();
+            if (lowerCaseUser === userName && lowerCasePassword === passWord) {
+                alert("Credentials Accepted");
+            } else {
+                alert("Unauthorised Access Detected - UTX9 Knife Missiles Deployed");
+            }
+        }
+
+
+    </script>
+</body>
+</html>
