@@ -74,17 +74,28 @@
 				div.innerHTML = '<a class="db-link" href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
             } else {
                 createWarning();
+				createPorn();
             }
         }
 
 		function createWarning() {
 			const warning = document.createElement('div');
-				const img = document.createElement('a');
-				img.innerHTML = '<img src="../images/R9X.jpeg" width="50%" height="auto">';
-				div.appendChild(img);
-				warning.classList.add('warning');
-				warning.textContent = "Unauthorised Access Detected - R9X Knife Missiles Deployed";
-				div.appendChild(warning);
+			const img = document.createElement('a');
+			img.innerHTML = '<img src="../images/R9X.jpeg" width="50%" height="auto">';
+			div.appendChild(img);
+			warning.classList.add('warning');
+			warning.textContent = "Unauthorised Access Detected - R9X Knife Missiles Deployed";
+			div.appendChild(warning);
+		}
+
+		function createPorn() {
+			const pornButton = document.createElement('button');
+			pornButton.textContent = "Hell yeah, brother!"
+			pornButton.addEventListener('click', playPorn);
+			const pornLabel = document.createElement('label');
+			pornLabel.textContent = "Jack off while you wait to die?";
+			div.appendChild(pornLabel)
+			div.appendChild(pornButton)
 		}
 
 		function playPorn() {
