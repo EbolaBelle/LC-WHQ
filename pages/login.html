@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+	<style>
+		* {
+			background-color: black;
+			color: green;
+			}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 50px;
+		}
+		.db-link {
+			font-size: xx-large;
+		}
+		.db-link:hover {
+			color: red;
+		}
+		label {
+			font-size: larger;
+		}
+		#return-link {
+			color: goldenrod;
+		}
+		.warning {
+			color: red;
+			font-size: x-large;
+			margin: 50px;
+		}
+		.container > a {
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<label>Username:</label>
+	<br>
+	<input class="user">
+	<br>
+	<label>Password:</label>
+	<br>
+	<input class="password">
+	<br>
+	<button>Login</button>
+</div>
+<div class="footer">
+	<a id="return-link" href="../index.html">Return to LouCorp Hub</a>
+</div>
+    <script>
+        const userName = "lillithember";
+        const passWord = "anarcho.croneyism";
+		const userInput = document.querySelector('.user');
+		const pw = document.querySelector('.password');
+		const button = document.querySelector('button');
+		const div = document.querySelector('.container')
+
+		button.addEventListener('click', authentication);
+
+        function authentication() {
+			while (div.firstChild) {
+                div.removeChild(div.lastChild);				
+            }
+            let lowerCaseUser = userInput.value.toLowerCase();
+	    	let lowerCasePassword = pw.value.toLowerCase();
+            if (lowerCaseUser === userName && lowerCasePassword === passWord) {     
+				div.innerHTML = '<a class="db-link" href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
+            } else {
+                createWarning();
+            }
+        }
+
+		function createWarning() {
+			const warning = document.createElement('div');
+				const img = document.createElement('a');
+				img.innerHTML = '<img src="../images/R9X.jpeg" width="50%" height="auto">';
+				div.appendChild(img);
+				warning.classList.add('warning');
+				warning.textContent = "Unauthorised Access Detected - R9X Knife Missiles Deployed";
+				div.appendChild(warning);
+		}
+
+		function playPorn() {
+			const PORN = document.createElement('div');
+			PORN.innerHTML = "<audio autoplay><source src='porn.ogg' type='audio/ogg'></audio>";
+			div.appendChild(PORN);
+		}
+    </script>
+</body>
+</html>
