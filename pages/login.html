@@ -9,35 +9,41 @@
 			background-color: black;
 			color: green;
 			}
-		div {
+		.container {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			padding: 50px;
 		}
-		a {
+		.db-link {
 			font-size: xx-large;
 		}
-		a:hover {
+		.db-link:hover {
 			color: red;
 		}
 		label {
 			font-size: larger;
 		}
+		#return-link {
+			color: goldenrod;
+		}
 	</style>
 </head>
 <body>
 <div class="container">
-<label>Username:</label>
-<br>
-<input class="user">
-<br>
-<label>Password:</label>
-<br>
-<input class="password">
-<br>
-<button>Login</button>
+	<label>Username:</label>
+	<br>
+	<input class="user">
+	<br>
+	<label>Password:</label>
+	<br>
+	<input class="password">
+	<br>
+	<button>Login</button>
+</div>
+<div class="footer">
+	<a id="return-link" href="../index.html">Return to LouCorp Hub</a>
 </div>
     <script>
         const userName = "lillithember";
@@ -56,7 +62,7 @@
 				while (div.firstChild) {
                 div.removeChild(div.lastChild);				
             }
-				div.innerHTML = '<a href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
+				div.innerHTML = '<a class="db-link" href="https://beta.the-eye.eu/public/">ACCESS GRANTED</a>';
             } else {
                 alert("Unauthorised Access Detected - UTX9 Knife Missiles Deployed");
             }
