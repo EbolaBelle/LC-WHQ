@@ -4,6 +4,7 @@ let firstNumber;
 let secondNumber;
 let operator;
 let displayValue;
+const OPERANDS = ['+','-','x','/']
 
 //DOM variables
 
@@ -30,19 +31,19 @@ const clear = document.querySelector('#clear');
 //Operator buttons
 
 addBtn.addEventListener('click', () => {
-    handleOperator();
+    handleOperator(addBtn);
     operator = "add";
 })
 subtractBtn.addEventListener('click', () => {
-    handleOperator();
+    handleOperator(subtractBtn);
     operator = "subtract";
 })
 multiplyBtn.addEventListener('click', () => {
-    handleOperator();
+    handleOperator(multiplyBtn);
     operator = "multiply";
 })
 divideBtn.addEventListener('click', () => {
-    handleOperator();
+    handleOperator(divideBtn);
     operator = "divide";
 })
 
@@ -62,7 +63,7 @@ equals.addEventListener('click', () => {
     displayValue = output.textContent;
 })
 decimal.addEventListener('click', function() {
-    if (displayValue % 1 !== 0) {
+    if (displayValue % 1 !== 0) { //check if decimal already present
         return;
     } else {
         output.textContent = output.textContent + this.textContent;
@@ -126,10 +127,18 @@ function cleanSlate() {
     operator = undefined;
 }
 function handleNumber() {
-    output.textContent = output.textContent + this.textContent;
-    displayValue = +(output.textContent);
+    if (OPERANDS.some(sign => output.textContent.includes(sign))) { //check if operator is displayed
+        output.textContent = "";
+    }
+    if (output.textContent.length <= 21) {
+        output.textContent = output.textContent + this.textContent;
+    }
+    displayValue = (output.textContent);
 }
-function handleOperator() {
-    firstNumber = +(output.textContent)
-    output.textContent = "";
+function handleOperator(btn) {
+    firstNumber = +(output.textContent);
+    output.textContent = btn.textContent;
+}
+function fixDecimal(num) {
+    return num.toFixed(21);
 }
