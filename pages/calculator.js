@@ -124,6 +124,3 @@ function handleOperator(btn) {
     firstNumber = +(output.textContent);
     output.textContent = btn.textContent;
 }
-function fixDecimal(num) {
-    return num.toFixed(21);
-}
